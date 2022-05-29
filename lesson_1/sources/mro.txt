@@ -1,0 +1,3 @@
+Method Resolution Order
+MRO is a concept used in inheritance. It is the order in which a method is searched for in a classes 
+hierarchy and is especially useful in Python because Python supports multiple inheritance.
