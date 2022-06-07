@@ -2,10 +2,9 @@ name: Check code quality
 
 on: [push, pull_request]
 
-
 jobs:
-  build:
-    runs-on: ubuntu-latest, windows-latest
+  tests:
+    runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v3
