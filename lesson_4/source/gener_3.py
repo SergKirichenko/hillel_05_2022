@@ -1,6 +1,6 @@
 import sys
-from string import ascii_letters
 from random import choice
+from string import ascii_letters
 
 
 def gen_letters(n: int) -> str:
@@ -16,6 +16,3 @@ print(sys.getsizeof(data))
 
 print(tup)
 print(sys.getsizeof(tup))
-
-
-
