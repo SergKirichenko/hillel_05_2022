@@ -1,5 +1,4 @@
-name: Check code quality
-
+name: Testing code quality
 on: [push, pull_request]
 
 jobs:
