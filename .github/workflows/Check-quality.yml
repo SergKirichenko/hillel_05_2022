@@ -5,7 +5,13 @@ on: [push, pull_request]
 jobs:
   tests:
     runs-on: ubuntu-latest
+<<<<<<< HEAD
       python-version: '3.10'
+=======
+      strategy:
+        matrix:
+          python-version: [3.8, 3.10]
+>>>>>>> 35d43cfd807f2c216f11aa183ef0ba3efea9f2b2
     
     steps:
       - uses: actions/checkout@v3
