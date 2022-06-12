@@ -1,16 +1,10 @@
 name: Testing code quality
 
-on: 
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
-    name: Setup ${{ matrix.python }} ${{ matrix.os }}
+    name: Setup 
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
