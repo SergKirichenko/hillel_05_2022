@@ -25,6 +25,4 @@ jobs:
       
       - name: Run formatters
         run: black --check ./ && isort --check-only ./
-      
-      - name: Run mypy 
-        run: mypy ./ 
+    
