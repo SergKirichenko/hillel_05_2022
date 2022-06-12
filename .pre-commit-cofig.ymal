@@ -7,12 +7,14 @@ repos:
         types: [python]
         language: system
         pass_filenames: false
+
     -   id: isort
         name: isort
         entry: isort --check-only ./
         types: [python]
         language: system
         pass_filenames: false
+        
     -   id: flake8
         name: flake8
         entry: flake8 ./
