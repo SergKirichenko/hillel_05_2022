@@ -11,12 +11,12 @@ on:
 jobs:
   build:
     name: Setup ${{ matrix.python }} ${{ matrix.os }}
-      runs-on: ${{ matrix.os }}
-      strategy:
-        fail-fast: false
-        matrix:
-          os: [windows-latest, ubuntu-latest]
-          python: [3.8, 3.10]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: [3.8, 3.10]
     
     steps:
       - uses: actions/checkout@v3
