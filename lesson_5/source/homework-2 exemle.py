@@ -28,7 +28,7 @@ def log(message: str) -> None:
 
 def add_player(num: int, name: str, age: int) -> None:
     player = {"name": name, "number": num, "age": age}
-    if num in {player["num"] for player in team}:
+    if num in {player["number"] for player in team}:
         print(log(message="You can't add player with the same number"))
         return
 
