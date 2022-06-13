@@ -1,7 +1,4 @@
 # hillel_05_2022
 
 
-[![Tests Status](https://github.com/SergKirichenko/hillel_05_2022/actions/workflows/Check-quality.yml/badge.svg?)](https://github.com/SergKirichenko/hillel_05_2022/actions/workflows/Check-quality.yml)
-
-
 [![Builds Status](https://github.com/SergKirichenko/hillel_05_2022/actions/workflows/Test-code.yml/badge.svg?)](https://github.com/SergKirichenko/hillel_05_2022/actions/workflows/Test-code.yml)
