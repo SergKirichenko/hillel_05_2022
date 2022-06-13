@@ -14,7 +14,7 @@ def lines_reader_and_words_finder_generator() -> Generator:
 
 def user_input(line) -> bool:
     while True:
-        answer = input(f"Do you want to add this line << {line}? >> [Y/N]: ")
+        answer = input(f"Do you want to add this line # {line}? # [Y/N]: ")
         if answer.lower() in ["y", "yes"]:
             return True
         elif answer.lower() in ["n", "no", "not"]:
@@ -27,7 +27,8 @@ def generates_list():
     results = [
         word for word in lines_reader_and_words_finder_generator() if user_input(word)
     ]
-    print(f"Results: {results}.\n\n Amount of added lines: <<<_{len(results)}_>>>. \n")
+    print(f"Results: {results}.\n\n ")
+    print(f"Total amount of added lines: #{len(results)}#. \n")
 
 
 if __name__ == "__main__":
