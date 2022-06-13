@@ -1,5 +1,5 @@
 repos:
--   repo: local
+-   repo: https://github.com/SergKirichenko/hillel_05_2022.git
     hooks:
     -   id: black
         name: black
