@@ -1,13 +1,13 @@
-team: list([dict]) = [
+from typing import List
+
+team: List[dict] = [
     {"name": "John", "age": 20, "number": 1},
     {"name": "Mark", "age": 33, "number": 3},
     {"name": "Cavin", "age": 17, "number": 12},
 ]
 
 
-def repr_players(
-    players: list([dict]), sorter: bool, key=lambda x: x["number"]
-) -> None:
+def repr_players(players: List[dict], sorter: bool, key=lambda x: x["number"]) -> None:
     print("TEAM:")
     if sorter:
         for player in sorted(players, key=key):
@@ -36,7 +36,7 @@ def add_player(num: int, name: str, age: int) -> None:
     log(message=f"Player {player['name']} added")
 
 
-def remove_player(players: list([dict]), num: int) -> None:
+def remove_player(players: List[dict], num: int) -> None:
     for index, player in enumerate(players):
         if player["number"] == num:
             player_name = player["name"]
