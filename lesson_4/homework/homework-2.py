@@ -2,7 +2,7 @@ import os
 from typing import Generator
 
 KEYWORD = "user"
-PATH_FILE = os.path.join("./lesson_4/homework/.temp/rockyou.txt")
+PATH_FILE = os.path.join("rockyou.txt")
 
 
 def lines_reader_and_words_finder_generator() -> Generator:
@@ -14,8 +14,8 @@ def lines_reader_and_words_finder_generator() -> Generator:
 
 def user_input(line) -> bool:
     while True:
-        answer = input(f"Do you want to add this line # {line}? # [Y/N]: ")
-        if answer.lower() in ["y", "yes"]:
+        answer = input(f"If you want to add this line # {line}? # press [Enter], but not press [n/N]: ")
+        if answer.lower() == "":
             return True
         elif answer.lower() in ["n", "no", "not"]:
             return False
