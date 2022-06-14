@@ -55,18 +55,18 @@ def remove_player(players: List[dict], number: int) -> None:
             print("\n")
 
 
-def update_player(number: int, new_number: int) -> None:
+def update_player(number: int, new_number: int = None, new_name: str = None, new_age: int = None) -> None:
     for player in team:
         if player["number"] == number:
-            player_update = {
-                "name": player["name"],
-                "age": player["age"],
-                "number": new_number,
-            }
-            player.update(player_update)
-            log(
-                message=f"You change player number: <{number}> on new number: <{new_number}> "
-            )
+            if new_name and new_age:
+                player["name"] = new_name
+                player["age"] = new_age
+                log(message=f"Player number: {number} now is: {new_name} (Age:{new_age}) ")
+            elif new_number:
+                player["number"] = new_number
+                log(
+                    message=f"You change player number: <{number}> on new number: <{new_number}> "
+                )
             print("\n")
 
 
@@ -77,6 +77,7 @@ def main():
     add_player(15, "Adam", 24)
     repr_players(team, False)
     update_player(12, 7)
+    update_player(1, new_name="Bill", new_age=21)
     remove_player(team, 13)
     repr_players(team, False)
 
