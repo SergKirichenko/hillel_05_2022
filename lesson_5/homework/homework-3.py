@@ -1,6 +1,6 @@
 from typing import List
 
-team: list = [
+team: List[dict] = [
     {"name": "John", "age": 20, "number": 1},
     {"name": "Mark", "age": 33, "number": 3},
     {"name": "Cavin", "age": 17, "number": 12},
