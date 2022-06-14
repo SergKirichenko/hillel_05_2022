@@ -1,8 +1,8 @@
 repos:
--   repo: https://github.com/SergKirichenko/hillel_05_2022.git
+-   repo: https://github.com/psf/black
     hooks:
-    -   id: black-formater
-        name: cheack with black
+    -   id: black
+        name: black
         entry: black --check ./
-        language: python
-        types: [file]
+        language: system
+        types: [python]

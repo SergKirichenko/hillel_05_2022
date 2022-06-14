@@ -1,23 +1,16 @@
 repos:
--   repo: https://github.com/SergKirichenko/hillel_05_2022.git
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
     hooks:
-    -   id: black-formater
-        name: cheack with black
-        entry: black --check ./
-        types: [python]
-        language: system
-        pass_filenames: false
+      - id: isort
 
-    -   id: isort
-        name: isort
-        entry: isort --check-only ./
-        types: [python]
-        language: system
-        pass_filenames: false
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
         
-    -   id: flake8
-        name: flake8
-        entry: flake8 ./
-        types: [python]
-        language: system
-        pass_filenames: false
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 4.0.1
+    hooks:
+      - id: flake8
+    
