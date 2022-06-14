@@ -11,7 +11,9 @@ NAME = "name"
 VALUE: str = NUMBER
 
 
-def repr_players(players: List[dict], sorter: bool = False, key=lambda x: x[VALUE]) -> None:
+def repr_players(
+    players: List[dict], sorter: bool = False, key=lambda x: x[VALUE]
+) -> None:
     sub_list_dict = {
         "number": ["Name", "Age"],
         "name": ["Number", "Age"],
@@ -62,7 +64,9 @@ def update_player(number: int, new_number: int) -> None:
                 "number": new_number,
             }
             player.update(player_update)
-            log(message=f"You change player number: <{number}> on new number: <{new_number}> ")
+            log(
+                message=f"You change player number: <{number}> on new number: <{new_number}> "
+            )
             print("\n")
 
 
