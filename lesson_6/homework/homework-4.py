@@ -1,26 +1,18 @@
-# MODIFY THIS DECORATOR
-def functools():
-    pass
+def reverce_str(func):
+    def wrapper(text: str):
+        if isinstance(text, str):
+            result = text[::-1]
+        else:
+            result = None
+        return result
+
+    return wrapper
 
 
-def mask_data(target_key: str, replace_with: str = "*"):
-    """Replace the value of a dictionary with a 'masked' version."""
-
-    def decorator(func):
-        @functools.wraps(func)
-        def wrapper(*args, **kwargs):
-            return func(*args, **kwargs)
-
-        return wrapper
-
-    return decorator
+@reverce_str()
+def get_string(text: str = input("Print text: ")):
+    return text
 
 
-# TARGET FUNCTIONS
-@mask_data(target_key="name")
-def get_user(name: str, age: int):
-    return {"name": name, "age": age}
-
-
-# TEST OUPUT
-print(get_user(name="Alice", age=30), get_user(name="Bob", age=25), sep="\n")
+if __name__ == "__main__":
+    print(get_string())
