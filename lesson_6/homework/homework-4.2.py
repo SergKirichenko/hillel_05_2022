@@ -1,4 +1,6 @@
 # Homework 4 - Decorators Part 2
+
+
 def mask_info(dict_key: str, mask="*"):
     def wrapper(func):
         def inner(name: str, age: int):

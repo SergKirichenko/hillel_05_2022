@@ -1,5 +1,5 @@
 # Homework-4 - Decorators Part 1
-def reverse_str(reverse=True):
+def reverse_string(reverse=True):
     def wrapper(func):
         def inner(*args):
             if args:
@@ -19,20 +19,20 @@ def reverse_str(reverse=True):
     return wrapper
 
 
-@reverse_str()
-def get_string():
+@reverse_string()
+def get_university_name() -> str:
     return "Western Institute of Technology and Higher Education"
 
 
-@reverse_str(False)
-def get_not_string():
+@reverse_string(False)
+def get_university_founding_year():
     return 1957
 
 
 if __name__ == "__main__":
-    print(get_string("Western Institute of Technology and Higher Education"))
-    print(get_string(1957))
-    print(get_string())
-    print(get_not_string())
-    print(get_not_string(2020))
-    print(get_not_string("Education it's well"))
+    print(get_university_name("Western Institute of Technology and Higher Education"))
+    print(get_university_name(1957))
+    print(get_university_name())
+    print(get_university_founding_year())
+    print(get_university_founding_year(2020))
+    print(get_university_founding_year("Education it's well"))

@@ -31,6 +31,7 @@ print(get_university_name(), get_university_founding_year(), sep="\n")
 
 
 def functools():
+
     pass
 
 
@@ -54,5 +55,5 @@ def get_user(name: str, age: int):
     return {"name": name, "age": age}
 
 
-# TEST OUPUT
+# TEST OUTPUT
 print(get_user(name="Alice", age=30), get_user(name="Bob", age=25), sep="\n")
