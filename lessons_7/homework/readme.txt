@@ -1,1 +1,0 @@
-No HomeWork ("ask any question")
