@@ -18,5 +18,8 @@ class ExchangeRates:
 
 
 er = ExchangeRates()
-er = ExchangeRates()
-er = ExchangeRates()
+er1 = ExchangeRates()
+er2 = ExchangeRates()
+print(id(er))
+print(id(er1))
+print(id(er2))

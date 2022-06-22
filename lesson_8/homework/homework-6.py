@@ -1,45 +1,30 @@
 from abc import ABC, abstractclassmethod
 from random import choice
+from typing import List
 
 
 class Shape(ABC):
     @abstractclassmethod
     def draw(self):
-        # horizon_line = self.h_line
-        # vertical_line = self.v_line
         pass
 
 
 class Rectangle(Shape):
-    """Change me"""
+    def draw(self):
+        print("\n----\n|  |\n----\n")
 
 
 class Circle(Shape):
-    """Change me"""
+    def draw(self):
+        print("\n -- \n-  -\n -- \n")
 
 
 def get_shape() -> Shape:
-    """
-    This function should return any instance of a Shape class
-    In our example it is Rectangle or Circle
-    """
-    options: list[Shape] = ["change_me"]
+    options: List[Shape] = [Rectangle(), Circle()]
     return choice(options)
 
 
 def main():
-    """
-    In Rectangle is used I'd like to see:
-
-    ----
-    |  |
-    ----
-
-    If Circle is used:
-      --
-     -  -
-      --
-    """
     shape: Shape = get_shape()
     shape.draw()
 
