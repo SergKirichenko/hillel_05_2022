@@ -1,10 +1,10 @@
 EN:
 - Create a class `Price`
     ```python
-        class Price:
-            def __init__(self, amount: int, currency: str) -> None:
-                self.amount: int = amount
-                self.currency: str = currency
+    class Price:
+        def __init__(self, amount: int, currency: str) -> None:
+            self.amount: int = amount
+            self.currency: str = currency
     ```
 - Acceptance criterias:
     - If I create 2 instances of a `Price` class I want to do operations between them:
@@ -20,10 +20,10 @@ EN:
 UA:
 - Ставоріть клас `Price`
     ```python
-        class Price:
-            def __init__(self, amount: int, currency: str) -> None:
-                self.amount: int = amount
-                self.currency: str = currency
+    class Price:
+        def __init__(self, amount: int, currency: str) -> None:
+            self.amount: int = amount
+            self.currency: str = currency
     ```
 - Вимоги:
     - Якщо я створюю 2 екземпляри класу `Price` я хочу мати можливість виконувати між ними наступні операції:
