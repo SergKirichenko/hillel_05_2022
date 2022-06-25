@@ -2,10 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def convert_currency(src: str, dst: str, amount: float):
+def convert_currency(src: str, dst: str, amount: float) -> float:
     if src != dst:
 
-        def get_digits(text):
+        def get_digits(text) -> float:
             new_text = ""
             for c in text:
                 if c.isdigit() or c == ".":
