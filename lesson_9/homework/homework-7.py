@@ -11,26 +11,23 @@ class Price:
 
     def _get_double_exchange(self, other: "Price") -> "Price":
         base_currency = "USD"
-        amount = convert_currency(
-            src=other.currency, dst=base_currency, amount=other.amount
-        )
-        other.amount = convert_currency(
-            src=base_currency, dst=self.currency, amount=amount
-        )
-        other.currency = self.currency
-        return Price(other.amount, other.currency)
+        if self.currency != other.currency:
+            amount = convert_currency(
+                src=other.currency, dst=base_currency, amount=other.amount
+            )
+            other.amount = convert_currency(
+                src=base_currency, dst=self.currency, amount=amount
+            )
+            other.currency = self.currency
+            return Price(other.amount, other.currency)
 
     def __add__(self, other: "Price") -> "Price":
-        if self.currency != other.currency:
-            Price._get_double_exchange(self, other)
-        result = Price(amount=(self.amount + other.amount), currency=self.currency)
-        return result
+        Price._get_double_exchange(self, other)
+        return Price(amount=(self.amount + other.amount), currency=self.currency)
 
     def __sub__(self, other: "Price") -> "Price":
-        if self.currency != other.currency:
-            Price._get_double_exchange(self, other)
-        result = Price(amount=(self.amount - other.amount), currency=self.currency)
-        return result
+        Price._get_double_exchange(self, other)
+        return Price(amount=(self.amount - other.amount), currency=self.currency)
 
     def exchange_currency(self, new_currency: str) -> None:
         self.amount = convert_currency(
