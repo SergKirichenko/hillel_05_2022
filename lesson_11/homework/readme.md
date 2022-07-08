@@ -6,7 +6,7 @@
         - T2 and T3 threads are waiting when the list is filled
         - When the list is full T2 and T3 are started
         - T2 thread finds the sum of the elements of the list
-        - T2 thread finds the arithmetic avarage of the elements of the list
+        - T3 thread finds the arithmetic avarage of the elements of the list
         - The resulting lists are displayed
 
     - Complete next function

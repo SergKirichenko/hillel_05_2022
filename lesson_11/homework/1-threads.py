@@ -2,32 +2,58 @@ from random import randint
 from threading import Thread
 from time import perf_counter, sleep
 
-N = 100000
+SPEC_LIST = []
+N = 10000
 
 
-def random_list(n) -> list:
-    print("наполнение списка")
-    list_r = [randint(1, 100) for _ in range(n)]
-    # print(f".{sleep(1)}.{sleep(1)}.{sleep(1)}.{sleep(1)}.")
-    sleep(1)
-    print("список заполнен")
-    return list_r
+def wait_on() -> None:  # Function for decoration
+    def t_() -> None:
+        sleep(0.25)
+        print(" .", end="")
+
+    t_(), t_(), t_(), t_()
+    print(" ")
+
+
+def random_list(n: int) -> None:
+    print("Loading...")
+    for _ in range(n):
+        SPEC_LIST.append(randint(1, 100))
+    wait_on()
+    print("Done")
 
 
 def two(int_list: list) -> None:
-    print(f"Сумма списка: {sum(int_list)}")
+    print(f"Sum of list: {sum(int_list)}")
 
 
-def three(int_list) -> None:
-    print(f"Среднее значение: {sum(int_list)/len(int_list)}")
+def three(int_list: list) -> None:
+    print(f"Middle meaning: {sum(int_list) / len(int_list)}")
+
+
+# def foo():
+#     time_a = perf_counter()
+#     random_list(N)
+#     two(SPEC_LIST)
+#     three(SPEC_LIST)
+#     print(f"time: {round(perf_counter() - time_a, 2)},c\n")
 
 
 def main():
-    time1 = perf_counter()
-    ram = random_list(N)
-    two(ram)
-    three(ram)
-    print(perf_counter() - time1)
+    time_a = perf_counter()
+    thread_1 = Thread(target=random_list, args=(N,))
+    thread_2 = Thread(target=two, args=(SPEC_LIST,))
+    thread_3 = Thread(target=three, args=(SPEC_LIST,))
+    thread_1.start()
+    thread_1.join()
+    thread_2.start()
+    thread_3.start()
+    print(f"time: {round(perf_counter()-time_a, 2)},c\n")
 
 
-thr_1 = Thread(target=random_list, args=(N,))
+if __name__ == "__main__":
+    main()
+
+    # t_1 = Thread(target=foo).start()
+    # t_2 = Thread(target=foo).start()
+    # t_3 = Thread(target=foo).start()
