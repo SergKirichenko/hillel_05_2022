@@ -14,9 +14,9 @@ async def get_primes_amount(num: int):
 
 def main(number: list):
     coroutines = [get_primes_amount(i) for i in number]
-    tasks = asyncio.gather(*coroutines)
+    # tasks = asyncio.gather(*coroutines)
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(tasks)
+    loop.run_until_complete(asyncio.gather(*coroutines))
     loop.close()
 
 
