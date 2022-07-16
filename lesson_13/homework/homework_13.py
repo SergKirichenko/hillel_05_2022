@@ -23,8 +23,9 @@ async def main():
 
 
 if __name__ == "__main__":
-    stat_1 = perf_counter()
+    start_1 = perf_counter()
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
     print(f"Pokemon: {DATA}")
-    print(round((perf_counter() - stat_1), 3))
+    print(round((perf_counter() - start_1), 3), "c")
+    print(len(DATA), "шт")

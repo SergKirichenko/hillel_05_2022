@@ -7,7 +7,7 @@ import requests
 
 BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
 MAX_POKEMON = 400
-SIZE = 800
+SIZE = 1000
 
 
 # import grequests
@@ -71,7 +71,7 @@ def main():
 
     # NOTE: Sync run
     start_time = perf_counter()
-    sync_main()
+    # sync_main()
     end_time = perf_counter()
     print(f"Execution time: {end_time - start_time}")
 
@@ -79,6 +79,9 @@ def main():
     # NOTE: Async run
     start_time = perf_counter()
     asyncio.run(async_main())
+    # loop = asyncio.get_event_loop()
+    # loop.run_until_complete(async_main())
+    # loop.close()
     end_time = perf_counter()
     print(f"Execution time: {end_time - start_time}")
 
